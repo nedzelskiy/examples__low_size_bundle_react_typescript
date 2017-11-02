@@ -1,9 +1,10 @@
 'use strict';
 
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
-    entry: './index.tsx',
+    entry: './src/node_modules/index.tsx',
     output: {
         path: __dirname + `/build/client/`,
         filename: 'client-bundle.js',
@@ -18,7 +19,8 @@ module.exports = {
             'react': 'preact-compat',
             'react-dom': 'preact-compat'
         },
-        extensions: [".tsx", ".ts", ".js"]
+        extensions: [".tsx", ".ts", ".js"],
+        modules: ["../../node_modules"]
 
     },
     module: {
